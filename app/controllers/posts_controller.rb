@@ -35,4 +35,8 @@ class PostsController < ApplicationController
 
     private
 
+    def post_params
+        params.require(:post).permit(:content, :comment, :clap, :user_id)
+    end
+
 end
