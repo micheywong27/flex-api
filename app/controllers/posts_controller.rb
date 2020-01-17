@@ -16,6 +16,7 @@ class PostsController < ApplicationController
             render json: post, status: :ok
         else
             render json: post.errors, status: :unprocessable_entity
+        end
     end
 
     def update
