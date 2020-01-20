@@ -36,3 +36,9 @@ Clap.create(user_id: 1, post_id: 3)
 Clap.create(user_id: 1, post_id: 7)
 Clap.create(user_id: 1, post_id: 10)
 Clap.create(user_id: 1, post_id: 11)
+
+Comment.destroy_all
+Comment.create(comment: "Congrats!", user_id: 1, post_id: 1)
+Comment.create(comment: "How did you do that?!", user_id: 1, post_id: 3)
+Comment.create(comment: "Great job. Keep it going!", user_id: 1, post_id: 5)
+Comment.create(comment: "Ok, let's aim for Saturday...", user_id: 1, post_id: 7)
