@@ -29,3 +29,10 @@ Favorite.create(user_id: 1, post_id: 3)
 Favorite.create(user_id: 1, post_id: 7)
 Favorite.create(user_id: 1, post_id: 8)
 Favorite.create(user_id: 1, post_id: 9)
+
+Clap.destroy_all
+Clap.create(user_id: 1, post_id: 1)
+Clap.create(user_id: 1, post_id: 3)
+Clap.create(user_id: 1, post_id: 7)
+Clap.create(user_id: 1, post_id: 10)
+Clap.create(user_id: 1, post_id: 11)
