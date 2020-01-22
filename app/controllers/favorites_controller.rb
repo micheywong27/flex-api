@@ -2,12 +2,12 @@ class FavoritesController < ApplicationController
     
     def index
         favorites = Favorite.all 
-        render json: favorites, status: :ok
+        render json: FavoriteSerializer.new(favorites), status: :ok
     end 
 
     def show
         favorite = Favorite.find(params[:id])
-        render json: favorite, status: :ok
+        render json: FavoriteSerializer.new(favorite), status: :ok
     end
 
     def create
