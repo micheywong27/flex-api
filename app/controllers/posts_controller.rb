@@ -1,9 +1,18 @@
 class PostsController < ApplicationController
     
     def index
-        posts = Post.all 
+        posts = Post.all.with_attached_media 
         render json: PostSerializer.new(posts), status: :ok
     end 
+
+    def media
+        post = Post.find_by(id: params[:id])
+        if post.media.attached?
+          redirect_to rails_blob_url(post.media)
+        else
+          head :not_found
+        end
+    end
 
     def show
         post = Post.find(params[:id])
@@ -37,7 +46,7 @@ class PostsController < ApplicationController
     private
 
     def post_params
-        params.require(:post).permit(:content, :comment, :clap, :nutrition, :user_id)
+        params.require(:post).permit(:media, :content, :comment, :clap, :nutrition, :user_id)
     end
 
 end
